@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.navBar__menu{
+    display: flex;
+    list-style: none;
+    justify-content: flex-end;
+    background-color: aqua;
+}
+.navBar__item{
+    padding: 1%;
+}
+.navBar__a{
+    text-decoration: none;
+}
+.navBar__item:hover{
+    transition: 0.5s;
+    background-color: aquamarine;
+}
