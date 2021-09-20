@@ -1,10 +1,12 @@
 import './Card.css';
-const Card = ({title, src, description, comprando}) => {
-    return (<article className='myCards__article'>
+import ItemCount from '../ItemCount/ItemCount';
+const Card = ({productId, title, src, description, comprando, stock, initial}) => {
+    return (<article className='myCards__article' to={productId}>
         <h3>{title}</h3>
         <img className='myCards__img' src={src} />
         <p>{description}</p>
-        <button onClick={()=> comprando(title)}>Agregar</button>
+        <ItemCount stock={stock} initial={initial}/>
+        <button onClick={()=> comprando(productId)}>Agregar</button>
     </article>
     )
 };

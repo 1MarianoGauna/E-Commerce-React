@@ -1,0 +1,20 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+.itemCount{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    border-radius: 5%;
+}
+
+.itemCount__suma{
+    width: 2em;
+    font-size: 1rem;
+}
+
+.itemCount__resta{
+    width: 2em;
+    font-size: 1rem;
+}
