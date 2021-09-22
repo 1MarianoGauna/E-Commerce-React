@@ -10,11 +10,11 @@ function ItemCount({stock, initial}){
     const restar = () => {
         setCount ((prevState) => prevState - 1)
     }
-    if (count > 5){
-        setCount ((prevState) => prevState = 5)
+    if (count > stock){
+        setCount ((prevState) => prevState = stock)
     }
-    else if(count < 1){
-        setCount ((prevState) => prevState = 1)
+    else if(count < initial){
+        setCount ((prevState) => prevState = initial)
     }
     return (
         <div className='itemCount'>
