@@ -1,16 +1,23 @@
 import './App.css';
+import * as React from 'react';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemList/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetail/ItemDetailContainer';
+import { BrowserRouter, Route, Switch } from "react-router-dom"
+import NotFound from './pages/NotFound';
+import Home from './pages/Home';
+import ItemDetail from './pages/ItemDetail';
 
 function App() {
   return (<div className='App'>
-  <header>
-    <NavBar />
-  </header>
-  <ItemListContainer/>
-  <ItemDetailContainer/>
-
+    <BrowserRouter>
+      <NavBar />
+      <Switch>
+        <Route exact path='/' component={Home} />
+        <Route exact path='/product/:id' component={ItemDetail} />
+        <Route path="*" component={NotFound} />
+      </Switch>
+    </BrowserRouter>
   </div>
   );
 }

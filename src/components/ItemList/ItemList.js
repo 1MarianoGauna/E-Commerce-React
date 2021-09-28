@@ -23,6 +23,7 @@ const ItemList = () =>{
             return (
                 <Card
                     key={producto.id}
+                    productId={producto.id}
                     title={producto.title}
                     src={producto.image}
                     description={producto.description}
