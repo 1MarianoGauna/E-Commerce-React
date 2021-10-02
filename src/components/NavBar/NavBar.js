@@ -11,7 +11,7 @@ function NavBar() {
                 <Link className='navBar__item' to='/'>Home</Link>
                 <li className='navBar__item'><a className='navBar__a' href="#">Productos</a></li>
                 <li className='navBar__item'><a className='navBar__a' href="#">Contacto</a></li>
-                <CartWidget />
+                <CartWidget/>
             </ul>
         </nav>
     );

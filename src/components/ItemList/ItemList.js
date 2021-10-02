@@ -2,9 +2,6 @@ import * as React from 'react';
 import Card from '../Card/Card';
 
 const ItemList = () =>{
-    const comprar = (id) => {
-        console.log(`Compraste el producto numero ${(id)}`)
-    }
     const [prod, setProd] = React.useState([]);
     React.useEffect(() => {
         getProducts().then((result) => setProd(result))
@@ -27,7 +24,6 @@ const ItemList = () =>{
                     title={producto.title}
                     src={producto.image}
                     description={producto.description}
-                    comprando={comprar}
                     stock={producto.stock}
                     initial={producto.initial}
                 />

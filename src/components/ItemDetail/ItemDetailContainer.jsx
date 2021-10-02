@@ -30,7 +30,6 @@ const ItemDetailContainer = () => {
                     productId={producto.id}
                     src={producto.image}
                     description={producto.description}
-                    comprando={comprar}
                     stock={producto.stock}
                     initial={producto.initial}
                 />
