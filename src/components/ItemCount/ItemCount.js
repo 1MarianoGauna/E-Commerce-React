@@ -1,11 +1,15 @@
-import * as React from 'react';
-import react from 'react';
+import * as React from "react";
 import './ItemCount.css'
 import { Link } from 'react-router-dom';
+import { CartContext } from "../CartContext/CartContext";
+import { useContext } from "react";
 
-function ItemCount({ stock, initial }) {
+function ItemCount({stock, initial, onAdd}) {
     const [compra, setCompra] = React.useState(false);
     const [count, setCount] = React.useState(initial);
+    const {addItem, cart} = useContext(CartContext)
+    
+
     const sumar = () => {
         setCount((prevState) => prevState + 1)
     }
@@ -20,8 +24,8 @@ function ItemCount({ stock, initial }) {
     }
     const comprado = () => {
         setCount(count)
-        console.log(count)
         setCompra(true)
+        addItem()
     }
     return (
         <div>
