@@ -1,8 +1,6 @@
 import './App.css';
 import * as React from 'react';
 import NavBar from './components/NavBar/NavBar';
-import ItemListContainer from './components/ItemList/ItemListContainer';
-import ItemDetailContainer from './components/ItemDetail/ItemDetailContainer';
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 import NotFound from './pages/NotFound';
 import Home from './pages/Home';

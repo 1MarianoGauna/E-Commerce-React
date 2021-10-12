@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 import { CartContext } from "../CartContext/CartContext";
 import { useContext } from "react";
 
-function ItemCount({stock, initial, onAdd}) {
+function ItemCount({stock, initial, onAdd, producto}) {
     const [compra, setCompra] = React.useState(false);
     const [count, setCount] = React.useState(initial);
-    const {addItem, cart} = useContext(CartContext)
+    const {addItem} = useContext(CartContext)
     
 
     const sumar = () => {
@@ -22,10 +22,10 @@ function ItemCount({stock, initial, onAdd}) {
     else if (count < initial) {
         setCount((prevState) => prevState = initial)
     }
-    const comprado = () => {
+    const comprado = (qty) => {
         setCount(count)
         setCompra(true)
-        addItem()
+        addItem({...producto, qty: count})
     }
     return (
         <div>
