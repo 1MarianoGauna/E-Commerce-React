@@ -37,7 +37,7 @@ function ItemCount({stock, initial, onAdd, producto}) {
             {!compra ?
                 <button onClick={() => comprado()}>Agregar</button> :
                 <Link to={`/cart`}>
-                    <button>Continuar</button>
+                    <button>Terminar compra</button>
                 </Link>}
         </div>
     )

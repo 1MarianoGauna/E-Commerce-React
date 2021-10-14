@@ -1,42 +1,60 @@
 import * as React from 'react';
+import { getFireStore } from '../../firebase';
 import Card from '../Card/Card';
 
-const ItemList = () =>{
+const ItemList = () => {
     const [prod, setProd] = React.useState([]);
     React.useEffect(() => {
-        getProducts().then((result) => setProd(result))
-    }, [])
-    const getProducts = () => {
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve(productos)
-            }, 2000)
-        })
-    }
+        const db = getFireStore();
+        const producCol = db.collection('productos');
+        console.log(producCol.get())
+        producCol
+            .get()
+            .then((querySnapshot) => {
+                console.log(querySnapshot)
+                if (querySnapshot.empty) {
+                    console.log('no products')
+                } else {
+                    setProd(querySnapshot.docs.map((doc) => doc.prod()));
+                }
+            })
+            .catch((querySnapshot) => console.log('no funca'))
 
-    return(
+    }, []);
+    /*React.useEffect(() => {
+        getProducts().then((result) => setProd(result))
+    }, [])*/
+    /*     const getProducts = () => {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve(productos)
+                }, 2000)
+            })
+        } */
+
+    return (
         <section className='myCards'>
-        {prod?.map((producto) => {
-            return (
-                <Card
-                    key={producto.id}
-                    productId={producto.id}
-                    title={producto.title}
-                    src={producto.image}
-                    description={producto.description}
-                    precio={producto.precio}
-                    stock={producto.stock}
-                    initial={producto.initial}
-                    producto = {producto}
-                />
-            );
-        })}
-    </section>
+            {prod?.map((producto) => {
+                return (
+                    <Card
+                        key={producto.id}
+                        productId={producto.id}
+                        title={producto.title}
+                        src={producto.image}
+                        description={producto.description}
+                        precio={producto.precio}
+                        stock={producto.stock}
+                        initial={producto.initial}
+                        producto={producto}
+                    />
+                );
+            })}
+        </section>
 
     )
 }
 export default ItemList
-const productos = [
+/* const productos = [
     {
         id: 0,
         title: 'Esto es un producto 0',
@@ -100,4 +118,4 @@ const productos = [
         stock: 6,
         initial: 1
     },
-]
+] */
