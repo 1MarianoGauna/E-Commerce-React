@@ -7,17 +7,13 @@ const ItemList = () => {
     React.useEffect(() => {
         const db = getFireStore();
         const producCol = db.collection('productos');
-        console.log(producCol.get())
         producCol
             .get()
-            .then((querySnapshot) => {
-                console.log(querySnapshot)
-                if (querySnapshot.empty) {
-                    console.log('no products')
-                } else {
-                    setProd(querySnapshot.docs.map((doc) => doc.prod()));
-                }
-            })
+            .then((querySnapshot) => { if(querySnapshot.empty){
+                console.log('no hay productos gg')
+            }else{
+                setProd(querySnapshot.docs.map((doc) => ({id: doc.id, ...doc.data()})))
+            }})
             .catch((querySnapshot) => console.log('no funca'))
 
     }, []);

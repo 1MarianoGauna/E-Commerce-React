@@ -9,7 +9,7 @@ const Card = ({ id, title, src, description, stock, initial, productId, producto
         <Link to={`/product/${productId}`}>
             <img className='myCards__img' src={src} />
         </Link>
-        <p>{description}</p>
+        <p className='myDescription'>{description}</p>
         <p>${precio}</p>
         <ItemCount stock={stock} initial={initial} producto={producto} />
     </article>
