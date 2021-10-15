@@ -1,7 +1,7 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import * as React from "react";
 import './NavBar.css';
 import CartWidget from "./CartWidget";
-import Home from "../../pages/Home";
 import { Link } from 'react-router-dom'
 
 function NavBar() {

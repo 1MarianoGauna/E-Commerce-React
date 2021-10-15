@@ -6,7 +6,7 @@ import { useContext } from "react";
 
 function ItemCount({stock, initial, onAdd, producto}) {
     const [compra, setCompra] = React.useState(false);
-    const [count, setCount] = React.useState(initial);
+    const [count, setCount] = React.useState(1);
     const {addItem} = useContext(CartContext)
     
 
@@ -19,8 +19,8 @@ function ItemCount({stock, initial, onAdd, producto}) {
     if (count > stock) {
         setCount((prevState) => prevState = stock)
     }
-    else if (count < initial) {
-        setCount((prevState) => prevState = initial)
+    else if (count < 1) {
+        setCount((prevState) => prevState = 1)
     }
     const comprado = (qty) => {
         setCount(count)
