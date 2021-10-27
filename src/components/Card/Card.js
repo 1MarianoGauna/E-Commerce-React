@@ -10,7 +10,7 @@ const Card = ({ id, title, src, description, stock, initial, productId, producto
             <img className='myCards__img' src={src} />
         </Link>
         <p className='myDescription'>{description}</p>
-        <p>${precio}</p>
+        <b>${precio}</b>
         <ItemCount stock={stock} initial={initial} producto={producto} />
     </article>
     )

@@ -1,0 +1,17 @@
+.navFooter{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    list-style: none;
+}
+.navFooter__item{
+    padding: 20px;
+}
+.navFooter__link{
+    font-size: 25px;
+    color: red;
+}
+
+.navFooter__link:hover{
+    color: black;
+}

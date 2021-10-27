@@ -1,0 +1,33 @@
+
+
+.cartDetail__img{
+    width: 200px;
+}
+.cartDetail__item{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.carousel{
+    width: 500px;
+    border: 1px solid;
+}
+.homeDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 50px;
+}
+.contactoForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form-control{
+    width: 500px;
+}
+.tituloForm{
+    padding: 50px;
+    text-align: center;
+}

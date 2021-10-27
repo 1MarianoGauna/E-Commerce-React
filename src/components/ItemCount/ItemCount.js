@@ -30,14 +30,14 @@ function ItemCount({stock, initial, onAdd, producto}) {
     return (
         <div>
             <div className='itemCount'>
-                <button onClick={restar} id='myButtonSumar' className='itemCount__suma'>-</button>
-                <p>{count}</p>
-                <button onClick={sumar} id='myButtonResta' className='itemCount__resta'>+</button>
+                <button onClick={restar} id='myButtonSumar' className='itemCount__suma btn btn-dark'>-</button>
+                <h4 className='count'>{count}</h4>
+                <button onClick={sumar} id='myButtonResta' className='itemCount__resta btn btn-dark'>+</button>
             </div>
             {!compra ?
-                <button onClick={() => comprado()}>Agregar</button> :
-                <Link to={`/cart`}>
-                    <button>Terminar compra</button>
+                <b onClick={() => comprado()} className='buttonAgregar'>Agregar</b> :
+                <Link to={`/cart`} className='buttonA'>
+                    <b className='buttonAgregar'>Terminar compra</b>
                 </Link>}
         </div>
     )

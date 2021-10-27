@@ -4,13 +4,25 @@
     box-sizing: border-box;
 }
 .myCards__img{
-    width: 35ex;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    width: 200px;   
 }
 .myCards__article{
-    border: 1px solid black;
     width: 500px;
-    height: auto;
+    height: 100%;
+    padding: 50px;
+}
+.myCards__article:hover{
+    box-shadow: 0 0 0 1em rgb(97, 97, 97);
+    transition: 1s;
 }
 .myDescription{
+    padding-top: 10px;
+    padding-bottom: 10px;
     width: 100%;
+}
+
+p{
+    border: none;
 }

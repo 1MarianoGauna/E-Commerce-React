@@ -3,6 +3,7 @@ import { useParams } from 'react-router';
 import { getFireStore } from '../../firebase';
 import Card from '../Card/Card';
 import ItemCount from '../ItemCount/ItemCount';
+import './ItemDetailContainer.css'
 
 const ItemDetailContainer = () => {
     const [prod, setProd] = React.useState([]);
@@ -14,25 +15,27 @@ const ItemDetailContainer = () => {
         const producCol = database.collection('productos');
         const myProduct = producCol.doc(id);
         myProduct.get().then((doc) => {
-            if(!doc.exists){
+            if (!doc.exists) {
                 console.log('No existe')
-            }else{
+            } else {
                 console.log(doc)
-                setProd({id: doc.id, ...doc.data()})
+                setProd({ id: doc.id, ...doc.data() })
             }
-        }).catch(() => {})
-        .finally(() => {})
+        }).catch(() => { })
+            .finally(() => { })
     }, [id])
     return (
-        <Card
-        title={prod?.title}
-        src={prod?.image}
-        description={prod?.description}
-        precio={prod?.precio}
-        stock={prod?.stock}
-        initial={prod?.initial}
-        producto={prod}
-        />
+        <section className='myCards__detail'>
+            <Card
+                title={prod?.title}
+                src={prod?.image}
+                description={prod?.description}
+                precio={prod?.precio}
+                stock={prod?.stock}
+                initial={prod?.initial}
+                producto={prod}
+            />
+        </section>
     )
 }
 

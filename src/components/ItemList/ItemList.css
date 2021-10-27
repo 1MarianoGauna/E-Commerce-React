@@ -1,0 +1,6 @@
+.myCards{
+    display: flex;  
+    height: auto;
+    justify-content: center;
+    margin-top: 35px;
+}

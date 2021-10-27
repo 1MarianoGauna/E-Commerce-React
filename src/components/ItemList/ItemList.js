@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { getFireStore } from '../../firebase';
 import Card from '../Card/Card';
+import './ItemList.css'
 
 const ItemList = () => {
     const [prod, setProd] = React.useState([]);
@@ -11,7 +12,7 @@ const ItemList = () => {
         producCol
             .get()
             .then((querySnapshot) => { if(querySnapshot.empty){
-                console.log('no hay productos gg')
+                console.log('No hay productos ')
             }else{
                 setProd(querySnapshot.docs.map((doc) => ({id: doc.id, ...doc.data()})))
             }})

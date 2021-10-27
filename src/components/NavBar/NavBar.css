@@ -3,19 +3,29 @@
     padding: 0;
     box-sizing: border-box;
 }
-.navBar__menu{
+header{
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(81, 83, 82);
+}
+.navBar__menu{
     list-style: none;
-    justify-content: flex-end;
-    background-color: aqua;
 }
 .navBar__item{
-    padding: 1%;
+    display: inline-block;
+    padding: 10px;
 }
-.navBar__a{
+.navBar__item:hover{
     text-decoration: none;
 }
 .navBar__item:hover{
     transition: 0.5s;
-    background-color: aquamarine;
+    background-color: #e9e9ed;
+}
+a{
+    color: white;
+}
+h2{
+    color: white;
 }

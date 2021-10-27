@@ -6,17 +6,22 @@ import NotFound from './pages/NotFound';
 import Home from './pages/Home';
 import ItemDetail from './pages/ItemDetail';
 import Cart from './pages/Cart';
-
+import Productos from './pages/Productos'
+import NavFooter from './components/Footer/NavFooter';
+import Contacto from './pages/Contacto';
 function App() {
   return (<div className='App'>
     <BrowserRouter>
       <NavBar />
       <Switch>
         <Route exact path='/' component={Home} />
+        <Route exact path='/productos' component={Productos}/>
         <Route exact path='/product/:id' component={ItemDetail} />
+        <Route exact path='/contacto' component={Contacto}/>
         <Route exact path='/cart' component={Cart} />
         <Route path="*" component={NotFound} />
       </Switch>
+      <NavFooter/>
     </BrowserRouter>
   </div>
   );

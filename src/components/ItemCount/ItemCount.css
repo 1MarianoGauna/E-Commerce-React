@@ -18,3 +18,19 @@
     width: 2em;
     font-size: 1rem;
 }
+.buttonAgregar{
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.buttonAgregar:hover{
+    color: rgb(19, 212, 19);
+}
+.count{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.buttonA{
+    color: black;
+}

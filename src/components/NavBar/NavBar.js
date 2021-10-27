@@ -6,14 +6,17 @@ import { Link } from 'react-router-dom'
 
 function NavBar() {
     return (
-        <nav className='Navbar'>
-            <ul className='navBar__menu'>
-                <Link className='navBar__item' to='/'>Home</Link>
-                <li className='navBar__item'><a className='navBar__a' href="#">Productos</a></li>
-                <li className='navBar__item'><a className='navBar__a' href="#">Contacto</a></li>
-                <CartWidget/>
-            </ul>
-        </nav>
+        <header>
+            <h2>Tienda Electronica</h2>
+            <nav className='Navbar'>
+                <ul className='navBar__menu'>
+                    <Link className='navBar__item' to='/'>Home</Link>
+                    <Link className='navBar__item' to='/productos'>Productos</Link>
+                    <Link className='navBar__item' to='/contacto'>Contacto</Link>
+                    <li className='navBar__item'><CartWidget className='navBar__a' /></li>
+                </ul>
+            </nav>
+        </header>
     );
 }
 

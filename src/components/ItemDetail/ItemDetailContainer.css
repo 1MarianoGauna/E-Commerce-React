@@ -1,0 +1,5 @@
+.myCards__detail{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
