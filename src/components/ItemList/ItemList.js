@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import * as React from 'react';
 import { getFireStore } from '../../firebase';
 import Card from '../Card/Card';

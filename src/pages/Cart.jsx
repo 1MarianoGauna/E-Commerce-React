@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import * as React from "react";
 import { CartContext } from "../components/CartContext/CartContext";
 import { useContext } from "react";
@@ -24,9 +25,8 @@ function Cart() {
         const ordersCollections = db.collection("orders");
         ordersCollections
             .add(newOrder)
-            .then((docRef) => console.log(docRef.id))
+            .then((docRef) => console.log('Se ha creado con exito su pedido: ', docRef.id, ' Su orden es: ', newOrder))
             .catch((error) => console.log(error))
-
     }
     if (cart.length === 0) {
         return (<h3>...No hay productos en tu carrito</h3>)
@@ -42,12 +42,23 @@ function Cart() {
                     <b>{producto.qty * producto.precio}</b>
                     <button onClick={() => deleteItem(producto)} className="btn btn-danger">Borrar</button>
                 </div>)}
-            <h2>Total: {cart.reduce((a, i) => a + i.precio * i.qty, 0)}</h2>
-            <form>
-                <input type="text" onChange={(e) => setName(e.target.value)} placeholder='Nombre' value={name} />
-                <input type="number" onChange={(e) => setPhone(e.target.value)} placeholder='Numero de telefono' value={phone} />
-                <input type='email' onChange={(e) => setEmail(e.target.value)} value={email} placeholder='Escribe tu email' />
-                <button onClick={handleCheckout}>Finalizar compra</button>
+            <h3 className='totalCompra'>Total: {cart.reduce((a, i) => a + i.precio * i.qty, 0)}</h3>
+            <form className='formFireBase'>
+                <div className='formFireBase__children'>
+                    <input type="text" onChange={(e) => setName(e.target.value)} placeholder='Nombre' value={name} className='formFireBase__item' />
+                </div>
+                <div className='formFireBase__children'>
+                    <input type="number" onChange={(e) => setPhone(e.target.value)} placeholder='Numero de telefono' value={phone} className='formFireBase__item' />
+                </div>
+                <div className='formFireBase__children'>
+                    <input type='email' onChange={(e) => setEmail(e.target.value)} value={email} placeholder='Escribe tu email' className='formFireBase__item' />
+                </div>
+                <div className='button__pedido'>
+                    <button onClick={handleCheckout} className='botonSalir btn btn-secondary'>Crear pedido</button>
+                </div>
+                <div className='button__finalizar'>
+                    <button type='submit' className='botonSalir btn btn-secondary'>Finalizar</button>
+                </div>
             </form>
         </div>
     }

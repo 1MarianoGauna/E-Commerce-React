@@ -2,7 +2,6 @@ import * as React from 'react';
 import { useParams } from 'react-router';
 import { getFireStore } from '../../firebase';
 import Card from '../Card/Card';
-import ItemCount from '../ItemCount/ItemCount';
 import './ItemDetailContainer.css'
 
 const ItemDetailContainer = () => {
