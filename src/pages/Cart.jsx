@@ -4,12 +4,14 @@ import { CartContext } from "../components/CartContext/CartContext";
 import { useContext } from "react";
 import './Cart.css';
 import { getFireStore } from '../firebase';
+import { useHistory } from "react-router";
 
 function Cart() {
     const { cart, deleteItem } = useContext(CartContext);
     const [name, setName] = React.useState('');
     const [phone, setPhone] = React.useState('');
     const [email, setEmail] = React.useState('');
+    const history = useHistory();
 
 
     const newOrder = {
@@ -25,9 +27,15 @@ function Cart() {
         const ordersCollections = db.collection("orders");
         ordersCollections
             .add(newOrder)
-            .then((docRef) => console.log('Se ha creado con exito su pedido: ', docRef.id, ' Su orden es: ', newOrder))
+            .then((docRef) => {
+                console.log('Tu orden es: ', docRef.id)
+                console.log(newOrder)
+                console.log(docRef)
+                history.push('/myorder')
+            })
             .catch((error) => console.log(error))
     }
+
     if (cart.length === 0) {
         return (<h3>...No hay productos en tu carrito</h3>)
     }
