@@ -3,6 +3,7 @@
     justify-content: center;
     text-decoration: none;
     list-style: none;
+    align-self: flex-end;
 }
 .navFooter__item{
     padding: 20px;

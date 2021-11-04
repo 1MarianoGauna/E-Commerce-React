@@ -26,6 +26,6 @@ header{
 a{
     color: white;
 }
-h2{
-    color: white;
+a:hover{
+    color: black;
 }

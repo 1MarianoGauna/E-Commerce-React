@@ -8,7 +8,7 @@ import { useHistory } from "react-router";
 
 function Cart() {
     const { cart, deleteItem } = useContext(CartContext);
-    const [name, setName] = React.useState('');
+    const [name, setName] = React.useState(''); 
     const [phone, setPhone] = React.useState('');
     const [email, setEmail] = React.useState('');
     const history = useHistory();
@@ -31,7 +31,7 @@ function Cart() {
                 console.log('Tu orden es: ', docRef.id)
                 console.log(newOrder)
                 console.log(docRef)
-                history.push('/myorder')
+                history.push(`/myorder/${docRef.id}`)
             })
             .catch((error) => console.log(error))
     }
@@ -63,9 +63,6 @@ function Cart() {
                 </div>
                 <div className='button__pedido'>
                     <button onClick={handleCheckout} className='botonSalir btn btn-secondary'>Crear pedido</button>
-                </div>
-                <div className='button__finalizar'>
-                    <button type='submit' className='botonSalir btn btn-secondary'>Finalizar</button>
                 </div>
             </form>
         </div>

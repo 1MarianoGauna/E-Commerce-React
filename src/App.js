@@ -20,7 +20,7 @@ function App() {
         <Route exact path='/product/:id' component={ItemDetail} />
         <Route exact path='/contacto' component={Contacto}/>
         <Route exact path='/cart' component={Cart} />
-        <Route exact path='/myorder' component={MyOrder}/>
+        <Route exact path='/myorder/:id' component={MyOrder}/>
         <Route path="*" component={NotFound} />
       </Switch>
       <NavFooter/>
