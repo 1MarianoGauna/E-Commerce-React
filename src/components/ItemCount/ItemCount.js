@@ -22,7 +22,7 @@ function ItemCount({stock, initial, onAdd, producto}) {
     else if (count < 1) {
         setCount((prevState) => prevState = 1)
     }
-    const comprado = (qty) => {
+    const comprado = (qty, quantity) => {
         setCount(count)
         setCompra(true)
         addItem({...producto, qty: count})

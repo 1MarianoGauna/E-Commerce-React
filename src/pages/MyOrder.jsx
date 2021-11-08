@@ -27,6 +27,7 @@ function MyOrder() {
         {!loading &&
             <div className='finalizacion'>
                 <h2>Detalles de compra</h2>
+                <p>Id de compra: <b>{producto?.id}</b></p>
                 <p>Nombre: {producto.Buyer.name}</p>
                 <p>Telefono: {producto.Buyer.phone}</p>
                 <p>Email: {producto.Buyer.email}</p>
